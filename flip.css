@@ -1,0 +1,229 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-image: radial-gradient(#929292 1px, rgb(237, 237, 237) 1px);
+  background-size: 10px 10px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  color: black;
+}
+
+h1 {
+  padding: 10px;
+  width: 100%;
+  font-size: 2rem;
+  background-color: rgb(18, 74, 72);
+  color: antiquewhite;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+h3 {
+  margin-top: 8px;
+  color: rgb(18, 74, 72);
+  font-size: 1.1rem;
+}
+
+.controls {
+  margin-top: 15px;
+  font-size: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  padding: 0 10px;
+}
+
+select,
+#moves {
+  padding: 6px;
+  border: none;
+  background-color: antiquewhite;
+  border-radius: 8px;
+  box-shadow: 2px 2px 1px 1px rgb(18, 74, 72);
+  font-size: 1rem;
+}
+
+button {
+  padding: 6px 12px;
+  border: none;
+  background-color: rgb(18, 74, 72);
+  transition: all ease-in 0.3s;
+  color: white;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+button:hover {
+  border-radius: 10px;
+  background-color: rgb(25, 90, 85);
+}
+
+#status {
+  margin-top: 10px;
+  font-size: 1rem;
+}
+
+/* Game Board */
+.game-bord {
+  display: grid;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  padding-bottom: 60px;
+}
+
+/* Cards */
+.card {
+  width: 80px;
+  height: 80px;
+  position: relative;
+  margin: 5px;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+  cursor: pointer;
+}
+
+.card.flip {
+  transform: rotateY(180deg);
+}
+
+.card .front,
+.card .back {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+}
+
+.card .front {
+  background-color: rgb(18, 74, 72);
+}
+
+.card .back {
+  background: antiquewhite;
+  box-shadow: 2px 2px 1px 1px rgb(18, 74, 72);
+  transform: rotateY(180deg);
+  background-size: cover;
+  background-position: center;
+}
+
+.card .back img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.onepiece-theme .card .front {
+  background: url("assets/flag.jpg") center/cover no-repeat;
+}
+
+.fruits-theme .card .front {
+background: linear-gradient(160deg, rgb(60, 122, 108), rgb(96, 50, 135), rgb(128, 0, 64) ); 
+  }
+footer {
+  padding-top: 5px;
+  width: 100%;
+  font-size: 1rem;
+  height: 30px;
+  background-color: rgb(18, 74, 72);
+  color: antiquewhite;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+
+.newdiv {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 15px;
+}
+
+/* ✅ Responsive styles */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+  h3 {
+    font-size: 1rem;
+  }
+
+  .controls {
+    font-size: 0.9rem;
+    gap: 8px;
+  }
+
+  select,
+  #moves,
+  button {
+    font-size: 0.9rem;
+    padding: 5px 10px;
+  }
+
+  .card {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.2rem;
+    padding: 8px;
+  }
+  h3 {
+    font-size: 0.9rem;
+  }
+
+  .controls {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .card {
+    margin-left: 13px;
+    width: 60px;
+    height: 60px;
+  }
+
+  #status {
+    font-size: 0.9rem;
+  }
+
+  footer {
+    font-size: 0.9rem;
+  }
+  select,
+  #moves,
+  button {
+    width: 100%;
+    font-size: 0.9rem;
+    padding: 5px 10px;
+  }
+
+  label {
+   
+    width: 50px;
+  }
+
+  .game-bord {
+    gap: 7px;
+  }
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FLIP CARD GAME</title>
+    <link rel="stylesheet" href="flip.css" />
+  </head>
+  <body class="onepiece-theme">
+    <h1>
+      Memory Card Flip Game
+      <h3>(One Piece Edition)</h3>
+    </h1>
+
+    <div class="controls">
+      <div class="newdiv"><label
+        >ROWS:
+        <select id="rows">
+          <option value="2">2</option>
+         
+          <option value="4" selected>4</option>
+         
+          <option value="6">6</option>
+        </select>
+      </label>
+      <label
+        >COLLUMS:
+        <select id="collums">
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4" selected>4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+        </select>
+      </label>
+      <label
+        >MOVES:
+        <input type="number" id="moves" value="20" />
+      </label>
+      </div>
+      <button id="start-btn" onclick="startGame()">START GAME</button>
+      <button onclick="switchTheme('onepiece')">One Piece Theme</button>
+      <button onclick="switchTheme('fruits')">Fruits Theme</button>
+    </div>
+    <div id="status"></div>
+    <div class="game-bord" id="gameBoard"></div>
+    <footer>Challenge your memory. Enjoy the game</footer>
+    <script src="flip.js"></script>
+  </body>
+</html>
